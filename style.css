@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap');
+
+body{
+    font-family: 'Montserrat', sans-serif;
+   text-align: center;
+   display: block;
+   color: var(--quaternary-color);
+   background-color: var(--primary-color);
+   font-size: 1.5rem;
+   font-weight: bolder;
+}
+label{
+    display: block;
+    padding-bottom: 2rem;
+}
+:root{
+    --primary-color : rgb(209, 64, 129);
+    --secondary-color : rgb(204, 245, 172);
+    --tertiary-color : rgb(242, 100, 25);
+    --quaternary-color : rgb(134, 187, 216)
+}
+h1{
+    padding : 2rem;
+  border-radius: 5rem;
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+    font-weight: bolder;
+    font-size: 3rem;
+}
+#checkButton{
+     padding: 1rem;
+     background-color: var(--secondary-color);
+     color: var(--tertiary-color);
+     border-radius: 5rem;
+     font-size: 1rem;
+     font-weight: bolder;
+}
+input{
+    padding: 1rem;
+    border-radius: 5rem;
+    color: var( --tertiary-color);
+    font-size: 0.8rem;
+   font-weight: bolder;
+}
+
+#outputDiv{
+    padding: 2rem;
+    margin-top: 4rem;
+    
+}
