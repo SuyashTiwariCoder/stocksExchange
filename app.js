@@ -5,16 +5,17 @@ let checkBtn = document.querySelector("#checkButton");
 let output = document.querySelector("#outputDiv");
 
 function checkProfitOrLoss(init, qty, cp) {
-
-  if (init > cp) {
-    let loss = (init - cp) * qty;
-    let lossPercentage = (loss / init) * 100;
+let initV = init*qty;
+let cpV = cp*qty;
+  if (initV > cpV) {
+    let loss = (initV - cpV) * qty;
+    let lossPercentage = (loss / initV) * 100;
     showMessage1(
       `Sorry you occured a Loss in your investments Loss = ${loss} and Loss percentage = ${lossPercentage}%`
     );
-  } else if (init < cp) {
-    let profit = (cp - init) * qty;
-    let profitPercentage = (profit / init) * 100;
+  } else if (initV < cpV) {
+    let profit = (cpV - initV) * qty;
+    let profitPercentage = (profit / initV) * 100;
 
     showMessage2(
       `Yayy!! you occured a Profit in your investments Profit = ${profit} and Profit percentage = ${profitPercentage}%`
