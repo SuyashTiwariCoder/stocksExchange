@@ -5,6 +5,7 @@ let checkBtn = document.querySelector("#checkButton");
 let output = document.querySelector("#outputDiv");
 
 function checkProfitOrLoss(init, qty, cp) {
+
   if (init > cp) {
     let loss = (init - cp) * qty;
     let lossPercentage = (loss / init) * 100;
@@ -51,6 +52,27 @@ function clickHandler() {
   let init = initialValue.value;
   let qty = quantity.value;
   let cp = currentPrice.value;
+  isPositiveOrNot(init , qty , cp )
+  
+}
 
-  checkProfitOrLoss(init, qty, cp);
+
+function isPositiveOrNot(init , qty , cp) {
+ if (init>0) {
+   if (qty>0) {
+   if (cp>0) {
+     checkProfitOrLoss(init, qty, cp);
+   } else {
+    alert("Current Value  Can't be negative ")
+     
+   }
+     
+   } else {
+   
+    alert("Quantity  Can't be negative ")
+   }
+ } else {
+  
+   alert("Initial Value Can't be negative ")
+ }
 }
