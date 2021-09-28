@@ -8,14 +8,14 @@ function checkProfitOrLoss(init, qty, cp) {
 let initV = init*qty;
 let cpV = cp*qty;
   if (initV > cpV) {
-    let loss = (initV - cpV) * qty;
-    let lossPercentage = (loss / initV) * 100;
+    let loss = parseFloat((init - cp)*qty).toFixed(2) ;
+    let lossPercentage = parseFloat(((init-cp)*100)/init).toFixed(2);
     showMessage1(
       `Sorry you occured a Loss in your investments Loss = ${loss} and Loss percentage = ${lossPercentage}%`
     );
   } else if (initV < cpV) {
-    let profit = (cpV - initV) * qty;
-    let profitPercentage = (profit / initV) * 100;
+    let profit = parseFloat((cp-init)*qty).toFixed(2)
+    let profitPercentage = parseFloat(((cp-init) * 100)/init).toFixed(2)
 
     showMessage2(
       `Yayy!! you occured a Profit in your investments Profit = ${profit} and Profit percentage = ${profitPercentage}%`
@@ -50,30 +50,17 @@ function showMessage3(message) {
 checkBtn.addEventListener("click", clickHandler);
 
 function clickHandler() {
-  let init = initialValue.value;
-  let qty = quantity.value;
-  let cp = currentPrice.value;
+  let init = Number(initialValue.value);
+  let qty = Number(quantity.value);
+  let cp = Number(currentPrice.value);
   isPositiveOrNot(init , qty , cp )
   
 }
 
 
 function isPositiveOrNot(init , qty , cp) {
- if (init>0) {
-   if (qty>0) {
-   if (cp>0) {
-     checkProfitOrLoss(init, qty, cp);
-   } else {
-    alert("Current Value  Can't be negative ")
-     
-   }
-     
-   } else {
-   
-    alert("Quantity  Can't be negative ")
-   }
+ if (init==""||qty==""||cp=="") {
+   alert("Please Enter all Values ")
  } else {
-  
-   alert("Initial Value Can't be negative ")
- }
-}
+  checkProfitOrLoss(init,qty,cp)
+ }}
