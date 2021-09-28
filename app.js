@@ -61,6 +61,9 @@ function clickHandler() {
 function isPositiveOrNot(init , qty , cp) {
  if (init==""||qty==""||cp=="") {
    alert("Please Enter all Values ")
- } else {
+ } 
+  else if(init<0 || qty < 0 || cp < 0 )
+ alert("Please enter positive values ")
+ else {
   checkProfitOrLoss(init,qty,cp)
  }}
